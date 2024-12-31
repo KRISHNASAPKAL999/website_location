@@ -17,7 +17,7 @@ const AddressForm = () => {
   const [currentId, setCurrentId] = useState(null);
 
   const fetchAddress = async (lat, lng) => {
-    const geocodingApiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyBCSAEanzCQ0JL6vjBJfe0gEIOp2gueUpQ`;
+    const geocodingApiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=REACT_APP_GOOGLE_API_KEY`;
   
     try {
       const response = await fetch(geocodingApiUrl);
@@ -181,7 +181,7 @@ const AddressForm = () => {
 
       {permissionGranted && (
         <div style={styles.mapContainer}>
-          <LoadScript googleMapsApiKey="AIzaSyBCSAEanzCQ0JL6vjBJfe0gEIOp2gueUpQ">
+          <LoadScript googleMapsApiKey="REACT_APP_GOOGLE_API_KEY">
             <GoogleMap
               mapContainerStyle={styles.map}
               center={location}
